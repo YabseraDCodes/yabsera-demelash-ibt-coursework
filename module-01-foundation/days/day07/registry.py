@@ -100,7 +100,7 @@ class Account:
 
         transaction = self.history.pop()
 
-        if transaction["type"] == "deposit" or "intrest":
+        if transaction["type"] in ("deposit", "interest"):
             self._change_balance(-transaction["amount"])
 
         elif transaction["type"] == "withdraw":
@@ -126,7 +126,7 @@ class SavingsAccount(Account):
             "type": "withdraw",
             "amount": interest
             })
-        self._notify(f"Interest of {interest:.2f} ETB has been added to your account.", "INTREST", interest)
+        self._notify(f"Interest of {interest:.2f} ETB has been added to your account.", "INTEREST", interest)
 
     def statement(self):
         self._notify(f"Account Type: SavingAcccount -- Account Owner: {self.owner}: {self.balance} ETB")
