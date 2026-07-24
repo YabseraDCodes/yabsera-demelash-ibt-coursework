@@ -18,7 +18,7 @@ premium_count = 0
 standard_count = 0
 basic_count = 0
 
-print("TeleBirr Customer Report")
+print("Mobile Banking Customer Report")
 print("-" * 35)
 
 for name, balance in customers:
