@@ -46,13 +46,6 @@ function generateReceipt(distancesArray, surgeFunction,
     `)
 }
 
-function calculatetot(array){
-    console.log(sumDistance(array))
-}
-
-distancesArray = [5, 3, 2];
-calculatetot(distancesArray);
-
 const tayesTracker = makeDriverTracker();
 const standardPricing = makeSurgeMultiplier(1.0);
 const rushHourPricing = makeSurgeMultiplier(1.5)
