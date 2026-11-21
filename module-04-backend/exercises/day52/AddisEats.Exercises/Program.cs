@@ -56,3 +56,18 @@ List<string> b = a;
 b.Add("donut");
 Console.WriteLine($"a: {string.Join(", ", a)}");
 Console.WriteLine($"b: {string.Join(", ", b)}");
+
+string? customerName = null;
+
+// Explicit null check
+int length1 = customerName != null ? customerName.Length : 0;
+
+// ??
+int length2 = (customerName ?? "").Length;
+
+// ?
+int length3 = customerName?.Length ?? 0;
+
+Console.WriteLine($"Explicit check: {length1}");
+Console.WriteLine($"Using ??: {length2}");
+Console.WriteLine($"Using ?.: {length3}");
