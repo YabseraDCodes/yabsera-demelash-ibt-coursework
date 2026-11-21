@@ -1,4 +1,7 @@
 ﻿using AddisEats.Catalog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 // EXERCISE 1
 //Console.WriteLine(DeliveryFeeHelper.DeliveryFee("Bole"));
@@ -42,16 +45,29 @@ List<Order> orders =
     new(5,"Hana","Piassa",250m,DateTime.Now.AddDays(-5))
 ];
 
+for (int i = 6; i <= 30; i++)
+{
+    orders.Add(new Order(
+        i,
+        $"Customer {i}",
+        i % 3 == 0 ? "Bole" :
+        i % 3 == 1 ? "Kazanchis" : "Piassa",
+        i * 100m,
+        DateTime.Now.AddDays(-i)
+    ));
+}
 
 // bole over 500ETB
 var boleOrders = orders
     .Where(o => o.Area == "Bole")
     .Where(o => o.Amount > 500m)
+    .Take(2)
     .ToList();
 
 // customer names sorted
 var names = orders
     .Select(o => o.CustomerName)
+    .Take(5)
     .OrderBy(name => name)
     .ToList();
 
