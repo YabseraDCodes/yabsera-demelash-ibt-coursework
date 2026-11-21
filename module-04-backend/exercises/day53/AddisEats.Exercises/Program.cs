@@ -32,3 +32,51 @@ Customer c2 = new("Abebe", "0911000000");
 Console.WriteLine(c1 == c2);
 
 
+// EXERCISE 5
+List<Order> orders =
+[
+    new(1,"Abebe","Bole",650m,DateTime.Now.AddDays(-1)),
+    new(2,"Sara","Kazanchis",700m,DateTime.Now.AddDays(-2)),
+    new(3,"John","Bole",450m,DateTime.Now.AddDays(-3)),
+    new(4,"Miki","Kazanchis",1200m,DateTime.Now.AddDays(-4)),
+    new(5,"Hana","Piassa",250m,DateTime.Now.AddDays(-5))
+];
+
+
+// bole over 500ETB
+var boleOrders = orders
+    .Where(o => o.Area == "Bole")
+    .Where(o => o.Amount > 500m)
+    .ToList();
+
+// customer names sorted
+var names = orders
+    .Select(o => o.CustomerName)
+    .OrderBy(name => name)
+    .ToList();
+
+//total revenue for Kazanchis
+var totalRevenue = orders
+    .Where(o => o.Area == "Kazanchis")
+    .Sum(o => o.Amount);
+
+//page 3 at 10 per page
+var page3 = orders
+    .OrderByDescending(o => o.CreatedAt)
+    .Skip(20)
+    .Take(10)
+    .ToList();
+
+Console.WriteLine("Bole Orders:");
+foreach (var order in boleOrders)
+    Console.WriteLine($"{order.CustomerName}: {order.Amount} ETB");
+
+Console.WriteLine("\nCustomer Names:");
+foreach (var name in names)
+    Console.WriteLine(name);
+
+Console.WriteLine($"\nKazanchis Revenue: {totalRevenue} ETB");
+
+Console.WriteLine("\nPage 3:");
+foreach (var order in page3)
+    Console.WriteLine($"{order.Id}: {order.CustomerName}");
