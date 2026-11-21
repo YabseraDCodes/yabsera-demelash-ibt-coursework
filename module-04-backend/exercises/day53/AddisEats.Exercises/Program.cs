@@ -83,16 +83,29 @@ var page3 = orders
     .Take(10)
     .ToList();
 
-Console.WriteLine("Bole Orders:");
-foreach (var order in boleOrders)
-    Console.WriteLine($"{order.CustomerName}: {order.Amount} ETB");
+//Console.WriteLine("Bole Orders:");
+//foreach (var order in boleOrders)
+//    Console.WriteLine($"{order.CustomerName}: {order.Amount} ETB");
 
-Console.WriteLine("\nCustomer Names:");
-foreach (var name in names)
-    Console.WriteLine(name);
+//Console.WriteLine("\nCustomer Names:");
+//foreach (var name in names)
+//    Console.WriteLine(name);
 
-Console.WriteLine($"\nKazanchis Revenue: {totalRevenue} ETB");
+//Console.WriteLine($"\nKazanchis Revenue: {totalRevenue} ETB");
 
-Console.WriteLine("\nPage 3:");
-foreach (var order in page3)
-    Console.WriteLine($"{order.Id}: {order.CustomerName}");
+//Console.WriteLine("\nPage 3:");
+//foreach (var order in page3)
+//    Console.WriteLine($"{order.Id}: {order.CustomerName}");
+
+
+// EXERCISE 6
+decimal amount = 1000m;
+
+Console.WriteLine("10% Off");
+DiscountService.PrintResult( amount,new TenPercentOffPolicy());
+
+Console.WriteLine("50 ETB Off");
+DiscountService.PrintResult(amount, new FiftyBirrOffPolicy());
+
+Console.WriteLine("VIP Discount");
+DiscountService.PrintResult(amount, new VipDiscountPolicy());
