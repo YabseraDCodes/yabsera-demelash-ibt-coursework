@@ -30,3 +30,14 @@ void totalFee()
 }
 
 totalFee();
+
+int resultInt = 7 / 2;
+decimal resultDecimal = (decimal)7 / 2;
+
+Console.WriteLine($"Integer division: {resultInt}");
+Console.WriteLine($"Decimal division: {resultDecimal}");
+
+/*
+ Use decimal division when splitting a delivery fee
+ three ways because it preserves the fractional amount.
+ */
