@@ -71,3 +71,19 @@ int length3 = customerName?.Length ?? 0;
 Console.WriteLine($"Explicit check: {length1}");
 Console.WriteLine($"Using ??: {length2}");
 Console.WriteLine($"Using ?.: {length3}");
+
+Console.Write("Enter ETB amount: ");
+string? input = Console.ReadLine();
+
+if (!decimal.TryParse(input, out decimal amount))
+{
+    Console.WriteLine("Invalid amount. Please enter a numeric value.");
+}
+else if (amount <= 0)
+{
+    Console.WriteLine("Amount must be greater than zero.");
+}
+else
+{
+    Console.WriteLine($"Amount: {amount:N2} ETB");
+}
