@@ -18,3 +18,15 @@ Console.WriteLine($"Customer ID: {customerId}");
 Console.WriteLine($"Grade: {grade}");
 Console.WriteLine($"Is Open: {isOpen}");
 Console.WriteLine($"Established Date: {establishedDate.ToString("dd MMM yyyy")}");
+
+void totalFee()
+{
+    decimal subtotal = 1480.5m;
+    decimal deliveryFee = 60m;
+    decimal total = subtotal + deliveryFee;
+    Console.WriteLine($"Subtotal: {subtotal, 13:N2}");
+    Console.WriteLine($"Delivery Fee: {deliveryFee, 13:N2}");
+    Console.WriteLine($"Total Fee: {total, 13:N2}");
+}
+
+totalFee();
