@@ -41,3 +41,18 @@ Console.WriteLine($"Decimal division: {resultDecimal}");
  Use decimal division when splitting a delivery fee
  three ways because it preserves the fractional amount.
  */
+
+
+// int is a value type. Assignment copies the value.
+int x = 10;
+int y = x;
+y = 20;
+Console.WriteLine($"x: {x}, y: {y}"); // x:
+
+// List<T> is a reference type. Assignment copies the reference,
+// so both variables point to the same object.
+List<string> a = new List<string> { "apple", "banana", "chocolate" };
+List<string> b = a;
+b.Add("donut");
+Console.WriteLine($"a: {string.Join(", ", a)}");
+Console.WriteLine($"b: {string.Join(", ", b)}");
