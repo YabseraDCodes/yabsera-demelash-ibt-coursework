@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj": {}
+    "c:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj": {
+    "c:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj",
+        "projectUniqueName": "c:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj",
         "projectName": "AddisEats.TopUp",
-        "projectPath": "C:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj",
+        "projectPath": "c:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\AddisEats.TopUp.csproj",
         "packagesPath": "C:\\Users\\DYabsera\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\obj\\",
+        "outputPath": "c:\\Users\\DYabsera\\Desktop\\IBT-SW\\yabsera-demelash-ibt-coursework\\module-04-backend\\mini-project\\day52\\AddisEats.TopUp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
