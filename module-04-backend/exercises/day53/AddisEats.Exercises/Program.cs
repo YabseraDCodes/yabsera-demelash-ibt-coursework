@@ -109,3 +109,28 @@ DiscountService.PrintResult(amount, new FiftyBirrOffPolicy());
 
 Console.WriteLine("VIP Discount");
 DiscountService.PrintResult(amount, new VipDiscountPolicy());
+
+// EXERCISE 7
+static void ValidateAmount(decimal amount)
+{
+    if (amount <= 0)
+    {
+        throw new ArgumentException(
+            "Amount must be greater than zero.");
+    }
+}
+
+try
+{
+    ValidateAmount(-100m);
+
+    Console.WriteLine("Valid amount");
+}
+catch (ArgumentException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+finally
+{
+    Console.WriteLine("Finally block executed");
+}
