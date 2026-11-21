@@ -1,0 +1,15 @@
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\bin\Debug\net10.0\AddisEats.Exercises.exe
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\bin\Debug\net10.0\AddisEats.Exercises.deps.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\bin\Debug\net10.0\AddisEats.Exercises.runtimeconfig.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\bin\Debug\net10.0\AddisEats.Exercises.dll
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\bin\Debug\net10.0\AddisEats.Exercises.pdb
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.AssemblyInfoInputs.cache
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.AssemblyInfo.cs
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.csproj.CoreCompileInputs.cache
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.sourcelink.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.dll
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\refint\AddisEats.Exercises.dll
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.pdb
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\AddisEats.Exercises.genruntimeconfig.cache
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day53\AddisEats.Exercises\obj\Debug\net10.0\ref\AddisEats.Exercises.dll
