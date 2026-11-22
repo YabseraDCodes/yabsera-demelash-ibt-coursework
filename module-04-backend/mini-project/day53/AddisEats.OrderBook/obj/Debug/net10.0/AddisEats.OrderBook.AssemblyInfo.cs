@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AddisEats.OrderBook")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77c5d48cea00f397ad7444201c9c09a4f5c1a953")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d6b21de03a4fb6465d9141dc0cff5b539937cd3")]
 [assembly: System.Reflection.AssemblyProductAttribute("AddisEats.OrderBook")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AddisEats.OrderBook")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
