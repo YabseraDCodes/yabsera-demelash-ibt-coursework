@@ -1,6 +1,34 @@
 @AddisEats.Api_HostAddress = http://localhost:5174
 
-GET {{AddisEats.Api_HostAddress}}/weatherforecast/
+### Invalid restaurant ID: the :int route constraint returns 404
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/abc
 Accept: application/json
 
-###
+### Search across repeated areas
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants?areas=Bole&areas=Piassa
+Accept: application/json
+
+### An omitted areas filter returns every restaurant
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants
+Accept: application/json
+
+### Restaurant by ID
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/1
+Accept: application/json
+
+### Restaurant by name (distinct literal route)
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/by-name/Habesha%20Table
+Accept: application/json
+
+### Create an order (201 Created and a Location header)
+POST {{AddisEats.Api_HostAddress}}/api/v1/orders
+Content-Type: application/json
+
+{
+  "restaurantId": 1,
+  "menuItemIds": [1, 2]
+}
+
+### Fetch the created order using the ID returned above
+GET {{AddisEats.Api_HostAddress}}/api/v1/orders/1
+Accept: application/json
