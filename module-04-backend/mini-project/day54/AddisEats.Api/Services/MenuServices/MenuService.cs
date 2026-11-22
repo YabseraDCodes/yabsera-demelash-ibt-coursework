@@ -18,7 +18,7 @@ public class MenuService : IMenuService
 
     public MenuService(IOptions<MenuOptions> options)
     {
-        PageSize = options.Value.DefaultPageSize;
+        PageSize = Math.Clamp(options.Value.DefaultPageSize, 1, 100);
     }
 
     private int PageSize { get; }
@@ -46,4 +46,5 @@ public class MenuService : IMenuService
         _menuItems.Add(menuItem);
         return menuItem;
     }
+
 }

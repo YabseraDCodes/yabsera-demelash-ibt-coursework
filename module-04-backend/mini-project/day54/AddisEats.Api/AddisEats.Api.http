@@ -9,19 +9,19 @@ GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/1
 Accept: application/json
 
 ### Restaurant menu
-GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/1/menu
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/1/menu-items
 Accept: application/json
 
 ### Menu list and detail
-GET {{AddisEats.Api_HostAddress}}/api/v1/menu?category=Main
+GET {{AddisEats.Api_HostAddress}}/api/v1/menu-items?category=Main
 Accept: application/json
 
 ###
-GET {{AddisEats.Api_HostAddress}}/api/v1/menu/1
+GET {{AddisEats.Api_HostAddress}}/api/v1/menu-items/1
 Accept: application/json
 
 ### Create menu item
-POST {{AddisEats.Api_HostAddress}}/api/v1/menu
+POST {{AddisEats.Api_HostAddress}}/api/v1/menu-items
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 
 ### Orders collection
-GET {{AddisEats.Api_HostAddress}}/api/v1/orders
+GET {{AddisEats.Api_HostAddress}}/api/v1/orders?page=1&limit=10
 Accept: application/json
 
 ### Create order (201 with Location)
@@ -48,7 +48,7 @@ GET {{AddisEats.Api_HostAddress}}/api/v1/orders/1
 Accept: application/json
 
 ### Update order status
-PATCH {{AddisEats.Api_HostAddress}}/api/v1/orders/1/status
+PATCH {{AddisEats.Api_HostAddress}}/api/v1/orders/1/statuses
 Content-Type: application/json
 
 {

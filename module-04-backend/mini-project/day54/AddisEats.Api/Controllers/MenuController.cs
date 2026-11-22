@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AddisEats.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/menu")]
+[Route("api/v1/menu-items")]
 public class MenuController : ControllerBase
 {
     private readonly IMenuService _menuService;
@@ -30,7 +30,7 @@ public class MenuController : ControllerBase
         var menuItem = _menuService.GetById(id);
         if (menuItem == null)
         {
-            return NotFound();
+            return Problem(statusCode: 404, title: "Menu item not found.", detail: $"Menu item {id} was not found.", extensions: new Dictionary<string, object?> { ["code"] = "menu_item_not_found" });
         }
 
         return Ok(menuItem);
@@ -38,10 +38,13 @@ public class MenuController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(typeof(MenuItem), StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
     public ActionResult<MenuItem> Create([FromBody] MenuItem menuItem)
     {
+        if (string.IsNullOrWhiteSpace(menuItem.Name) || string.IsNullOrWhiteSpace(menuItem.Category) || menuItem.Price <= 0)
+            return Problem(statusCode: 400, title: "Menu item is not valid.", detail: "Name, category, and a price above zero are required.", extensions: new Dictionary<string, object?> { ["code"] = "invalid_menu_item" });
         var createdItem = _menuService.Create(menuItem);
         return CreatedAtAction(nameof(GetById), new { id = createdItem.Id }, createdItem);
     }
+
 }
