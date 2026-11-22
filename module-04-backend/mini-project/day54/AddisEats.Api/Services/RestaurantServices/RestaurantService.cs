@@ -8,11 +8,13 @@ public class RestaurantService : IRestaurantService
 {
     private static readonly List<Restaurant> Restaurants = Seed();
 
-    public IReadOnlyList<RestaurantDTO> GetAll(string? area, int page, int pageSize) => Restaurants
-        .Where(r => string.IsNullOrWhiteSpace(area) || r.Area.Equals(area, StringComparison.OrdinalIgnoreCase))
+    public IReadOnlyList<RestaurantDTO> GetAll(RestaurantQuery query) => Restaurants
+        .Where(r => string.IsNullOrWhiteSpace(query.Area) || r.Area.Equals(query.Area, StringComparison.OrdinalIgnoreCase))
+        .Where(r => query.Areas is null || query.Areas.Length == 0 || query.Areas.Contains(r.Area, StringComparer.OrdinalIgnoreCase))
+        .Where(r => query.MaxFeeEtb is null || r.DeliveryFeeEtb <= query.MaxFeeEtb.Value)
         .OrderBy(r => r.Id)
-        .Skip((page - 1) * pageSize)
-        .Take(pageSize)
+        .Skip(((query.Page ?? 1) - 1) * (query.Limit ?? 10))
+        .Take(query.Limit ?? 10)
         .Select(r => r.ToDTO())
         .ToList();
 
@@ -38,6 +40,7 @@ public class RestaurantService : IRestaurantService
             Name = names[i],
             Area = areas[i % areas.Length],
             Cuisine = cuisines[i],
+            DeliveryFeeEtb = 30m + (i % 4) * 15m,
             Menu = dishes.Select((dish, j) => new MenuItem
             {
                 Id = i * dishes.Length + j + 1,

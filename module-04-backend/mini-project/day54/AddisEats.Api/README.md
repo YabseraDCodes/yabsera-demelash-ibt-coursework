@@ -1,35 +1,30 @@
 # AddisEats API
 
-An in-memory ASP.NET Core Web API for Addis Eats restaurants and menus. The restaurant service starts with 12 seeded restaurants across Bole, Piassa, Kazanchis, and Arat Kilo, each with six menu items. Run the project and open `/swagger` to explore the endpoints.
+An in-memory ASP.NET Core Web API for restaurants, menus, and orders. Run the project and open `/swagger` in Development to explore the documented endpoints.
 
-## Restaurant endpoints
+## Route table
 
-| Method and route | What it does | Success | Failure |
-|---|---|---|---|
-| `GET /api/v1/restaurants?area=Bole&page=1&limit=5` | Lists restaurants, optionally filtered by area and paged. `page` defaults to `1`; `limit` defaults to `10` and must be between `1` and `100`. | `200 OK` | `400 Bad Request` for invalid paging values. |
-| `GET /api/v1/restaurants/{id}` | Returns one restaurant, including its menu. | `200 OK` | `404 Not Found` when the ID does not exist. |
-| `GET /api/v1/restaurants/{id}/menu` | Returns that restaurant's menu. | `200 OK` (an empty menu is `[]`) | `404 Not Found` when the restaurant does not exist. |
+| Verb | Route | Route constraints | Query parameters | Status codes |
+|---|---|---|---|---|
+| `GET` | `/api/v1/restaurants` | None | `area` optional; `areas` repeatable; `maxFeeEtb` optional; `page` defaults to `1`; `limit` defaults to `10` (maximum `100`) | `200`, `400` |
+| `GET` | `/api/v1/restaurants/{id:int}` | `id` must be an integer | None | `200`, `404` |
+| `GET` | `/api/v1/restaurants/{id:int}/menu` | `id` must be an integer | None | `200`, `404` |
+| `GET` | `/api/v1/menu` | None | `category` optional | `200` |
+| `GET` | `/api/v1/menu/{id:int}` | `id` must be an integer | None | `200`, `404` |
+| `POST` | `/api/v1/menu` | None | None | `201`, `400` |
+| `GET` | `/api/v1/orders` | None | None | `200` |
+| `GET` | `/api/v1/orders/{id:int}` | `id` must be an integer | None | `200`, `404` |
+| `POST` | `/api/v1/orders` | None | None | `201`, `400` |
+| `PATCH` | `/api/v1/orders/{id:int}/status` | `id` must be an integer | None | `200`, `400`, `404` |
 
-The restaurant controller uses `IRestaurantService`, registered as scoped. Restaurant responses use `RestaurantDTO` in `DTOs`, mapped from the `Restaurant` model by `Mappers/RestaurantMapper`.
+All collection endpoints return the same `{ "items": [...] }` envelope. JSON uses camelCase, omits null properties, and serializes enum values as strings. Restaurant search combines `area` and `areas` when both are supplied and filters by each restaurant's delivery fee. Pagination defaults live on `RestaurantQuery`; `page` and `limit` are nullable to distinguish omitted values from invalid values.
+
+Orders are stored in memory. Creating an order returns `201 Created` with a `Location` header pointing to `GET /api/v1/orders/{id}`. See `AddisEats.Api.http` for sample requests, including a non-integer ID that fails the route constraint.
 
 ## Project layout
 
 - `Controllers` — HTTP endpoints
-- `DTOs` — response data transfer objects
+- `DTOs` — response and collection envelope types
 - `Mappers` — model-to-DTO mapping
-- `Models` — restaurant and menu item entities
-- `Services` — restaurant and menu business logic, grouped by feature
-
-## CORS
-
-The `Frontend` CORS policy allows `http://localhost:3000`, `http://localhost:5173`, and `https://localhost:5173`. Edit `Cors:AllowedOrigins` in `appsettings.json` to match the frontend origin.
-
-## Existing menu endpoints
-
-| Method and route | What it does |
-|---|---|
-| `GET /api/v1/menu?category=Main` | Lists menu items, optionally filtered by category. |
-| `GET /api/v1/menu/{id}` | Returns one menu item, or `404 Not Found`. |
-| `POST /api/v1/menu` | Creates a menu item from `name`, `category`, and `price`. The price must be greater than zero ETB. |
-
-The menu API's default result limit is configured with `MenuOptions:DefaultPageSize` in `appsettings.json`. Example requests for the restaurant endpoints are in `AddisEats.Api.http`.
+- `Models` — restaurant, menu item, and order entities
+- `Services` — business logic

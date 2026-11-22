@@ -5,7 +5,7 @@ namespace AddisEats.Api.Services.RestaurantServices;
 
 public interface IRestaurantService
 {
-    IReadOnlyList<RestaurantDTO> GetAll(string? area, int page, int pageSize);
+    IReadOnlyList<RestaurantDTO> GetAll(RestaurantQuery query);
     RestaurantDTO? GetById(int id);
     IReadOnlyList<MenuItem>? GetMenu(int id);
 }

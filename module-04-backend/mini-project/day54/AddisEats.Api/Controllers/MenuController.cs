@@ -1,4 +1,5 @@
 using AddisEats.Api.Models;
+using AddisEats.Api.DTOs;
 using AddisEats.Api.Services.MenuServices;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,10 +16,10 @@ public class MenuController : ControllerBase
     }
 
     [HttpGet]
-    [ProducesResponseType(typeof(List<MenuItem>), StatusCodes.Status200OK)]
-    public ActionResult<List<MenuItem>> GetAll([FromQuery] string? category)
+    [ProducesResponseType(typeof(CollectionResponse<MenuItem>), StatusCodes.Status200OK)]
+    public ActionResult<CollectionResponse<MenuItem>> GetAll([FromQuery] string? category)
     {
-        return Ok(_menuService.GetAll(category));
+        return Ok(new CollectionResponse<MenuItem>(_menuService.GetAll(category)));
     }
 
     [HttpGet("{id:int}")]

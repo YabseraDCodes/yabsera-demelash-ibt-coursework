@@ -7,4 +7,5 @@ public record RestaurantDTO(
     string Name,
     string Area,
     string Cuisine,
+    decimal DeliveryFeeEtb,
     IReadOnlyList<MenuItem> Menu);

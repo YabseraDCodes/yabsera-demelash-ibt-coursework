@@ -10,5 +10,6 @@ public static class RestaurantMapper
         restaurant.Name,
         restaurant.Area,
         restaurant.Cuisine,
+        restaurant.DeliveryFeeEtb,
         restaurant.Menu.ToList());
 }

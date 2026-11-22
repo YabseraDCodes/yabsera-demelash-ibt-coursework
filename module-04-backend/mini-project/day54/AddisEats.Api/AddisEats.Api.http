@@ -1,18 +1,60 @@
 @AddisEats.Api_HostAddress = http://localhost:5282
 
-GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants?area=Bole&page=1&limit=5
+### Restaurant search: singular and repeated multi-value filters
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants?area=Bole&areas=Bole&areas=Piassa&maxFeeEtb=60&page=1&limit=5
 Accept: application/json
 
-###
+### Restaurant detail
 GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/1
 Accept: application/json
 
-###
+### Restaurant menu
 GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/1/menu
 Accept: application/json
 
-###
-GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/999
+### Menu list and detail
+GET {{AddisEats.Api_HostAddress}}/api/v1/menu?category=Main
 Accept: application/json
 
 ###
+GET {{AddisEats.Api_HostAddress}}/api/v1/menu/1
+Accept: application/json
+
+### Create menu item
+POST {{AddisEats.Api_HostAddress}}/api/v1/menu
+Content-Type: application/json
+
+{
+  "name": "Gomen Besiga",
+  "category": "Main",
+  "price": 350
+}
+
+### Orders collection
+GET {{AddisEats.Api_HostAddress}}/api/v1/orders
+Accept: application/json
+
+### Create order (201 with Location)
+POST {{AddisEats.Api_HostAddress}}/api/v1/orders
+Content-Type: application/json
+
+{
+  "restaurantId": 1,
+  "menuItemIds": [1, 2]
+}
+
+### Order detail (use the ID returned by POST)
+GET {{AddisEats.Api_HostAddress}}/api/v1/orders/1
+Accept: application/json
+
+### Update order status
+PATCH {{AddisEats.Api_HostAddress}}/api/v1/orders/1/status
+Content-Type: application/json
+
+{
+  "status": "Confirmed"
+}
+
+### Route constraint example: 404 because "abc" is not an integer ID
+GET {{AddisEats.Api_HostAddress}}/api/v1/orders/abc
+Accept: application/json
