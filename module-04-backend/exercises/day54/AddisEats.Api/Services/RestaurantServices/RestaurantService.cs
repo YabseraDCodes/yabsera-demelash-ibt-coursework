@@ -8,6 +8,7 @@ public class RestaurantService : IRestaurantService
     private static readonly List<Restaurant> Restaurants = Seed();
 
     public IReadOnlyList<RestaurantDto> GetAll(RestaurantQuery query) => Restaurants
+        .Where(restaurant => string.IsNullOrWhiteSpace(query.Name) || restaurant.Name.Contains(query.Name, StringComparison.OrdinalIgnoreCase))
         .Where(restaurant => string.IsNullOrWhiteSpace(query.Area) ||
                              restaurant.Area.Equals(query.Area, StringComparison.OrdinalIgnoreCase))
         .Where(restaurant => query.Areas is null || query.Areas.Length == 0 ||
@@ -21,11 +22,6 @@ public class RestaurantService : IRestaurantService
 
     public RestaurantDto? GetById(int id) => Restaurants
         .Where(restaurant => restaurant.Id == id)
-        .Select(ToDto)
-        .FirstOrDefault();
-
-    public RestaurantDto? GetByName(string name) => Restaurants
-        .Where(restaurant => restaurant.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
         .Select(ToDto)
         .FirstOrDefault();
 

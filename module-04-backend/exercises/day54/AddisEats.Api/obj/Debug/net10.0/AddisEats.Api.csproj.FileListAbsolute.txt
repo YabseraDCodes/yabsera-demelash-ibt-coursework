@@ -804,3 +804,15 @@ C:\Users\DYabsera\AppData\Local\Temp\Day54-after-build\AddisEats.Api.deps.json
 C:\Users\DYabsera\AppData\Local\Temp\Day54-after-build\AddisEats.Api.runtimeconfig.json
 C:\Users\DYabsera\AppData\Local\Temp\Day54-after-build\AddisEats.Api.dll
 C:\Users\DYabsera\AppData\Local\Temp\Day54-after-build\AddisEats.Api.pdb
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\appsettings.Development.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\appsettings.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\bin\Debug\net10.0\AddisEats.Api.deps.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\bin\Debug\net10.0\AddisEats.Api.runtimeconfig.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\bin\Debug\net10.0\AddisEats.Api.staticwebassets.endpoints.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\bin\Debug\net10.0\appsettings.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\AddisEats.Api.staticwebassets.endpoints.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\AddisEats.Api.deps.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\AddisEats.Api.runtimeconfig.json
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\AddisEats.Api.dll
+C:\Users\DYabsera\Desktop\IBT-SW\yabsera-demelash-ibt-coursework\module-04-backend\exercises\day54\build-validation\Debug\net10.0\AddisEats.Api.pdb

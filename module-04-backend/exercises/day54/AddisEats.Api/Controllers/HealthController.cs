@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AddisEats.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/health")]
+[Route("api/v1/health-checks")]
 public sealed class HealthController(IClock clock, IWebHostEnvironment environment) : ControllerBase
 {
     [HttpGet]

@@ -8,6 +8,10 @@ Accept: application/json
 GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants?areas=Bole&areas=Piassa
 Accept: application/json
 
+### Unknown query keys return 400 unknown_query_parameter
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants?areaa=Bole
+Accept: application/json
+
 ### An omitted areas filter returns every restaurant
 GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants
 Accept: application/json
@@ -16,8 +20,8 @@ Accept: application/json
 GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/1
 Accept: application/json
 
-### Restaurant by name (distinct literal route)
-GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants/by-name/Habesha%20Table
+### Search restaurants by name
+GET {{AddisEats.Api_HostAddress}}/api/v1/restaurants?name=Habesha%20Table
 Accept: application/json
 
 ### Create an order (201 Created and a Location header)

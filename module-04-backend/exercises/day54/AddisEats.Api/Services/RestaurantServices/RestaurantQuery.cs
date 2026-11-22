@@ -2,6 +2,7 @@ namespace AddisEats.Api.Services.RestaurantServices;
 
 public class RestaurantQuery
 {
+    public string? Name { get; set; }
     public string? Area { get; set; }
     public decimal? MaxFeeEtb { get; set; }
     public string[]? Areas { get; set; }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AddisEats.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/protected")]
+[Route("api/v1/protected-resources")]
 public sealed class ProtectedController : ControllerBase
 {
     [HttpGet]
